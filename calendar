@@ -33,7 +33,7 @@ void printCalendar(int month, int year) {
     int daysInMonth = getDaysInMonth(month, year);
     int firstDay = getFirstDayOfMonth(month, year);
 
-    
+
     for (int i = 0; i < firstDay; i++) {
         cout << "    ";
     }
@@ -48,8 +48,14 @@ void printCalendar(int month, int year) {
 }
 
 int main() {
-    int month, year;
-
+    int month, year, type;
+    cout << "For Full Year Calendar : Enter 1  \n";
+    cout <<"For Monthly Calendar : Enter 2 : ";
+    cin >> type;
+    switch(type){
+        case 2:
+  
+             
     cout << "Enter year (e.g., 2024): ";
     cin >> year;
     cout << "Enter month (1-12): ";
@@ -61,5 +67,17 @@ int main() {
     }
 
     printCalendar(month, year);
+    break;
+    
+    case 1:
+            cout << "Enter year (e.g., 2024): ";
+    cin >> year;
+    for(int i = 1; i <= 12 ; i++){
+        printCalendar(i,year);
+    }
+    break;
+        
+        
+    }
     return 0;
 }
